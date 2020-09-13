@@ -1,0 +1,12 @@
+TaxiCall\Order.class
+TaxiCall\AbstractEvent$1.class
+TaxiCall\OrderController.class
+TaxiCall\OrderRepository.class
+TaxiCall\OrderDenied.class
+TaxiCall\AbstractEvent.class
+TaxiCall\config\kafka\KafkaProcessor.class
+TaxiCall\OrderApplication.class
+TaxiCall\PolicyHandler.class
+TaxiCall\Ordered.class
+TaxiCall\OrderApproved.class
+TaxiCall\OrderCanceled.class
