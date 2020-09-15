@@ -34,19 +34,6 @@ public class Order {
 
             BeanUtils.copyProperties(this, ordered);
             ordered.publishAfterCommit();
-        }else if("Canceled".equals(this.getStatus())) {
-            System.out.println("##### status is not Ordered #####");
-
-            OrderCanceled orderCanceled = new OrderCanceled();
-
-            orderCanceled.setId(this.getOrderId());
-            orderCanceled.setOrderId(this.getOrderId());
-            orderCanceled.setDriverId(this.getDriverId());
-            orderCanceled.setLocation(this.getLocation());
-            orderCanceled.setCustomerName(this.getCustomerName());
-
-            BeanUtils.copyProperties(this, orderCanceled);
-            orderCanceled.publishAfterCommit();
         }
     }
 
@@ -65,6 +52,18 @@ public class Order {
             System.out.println("##### 통과 APPROVED #####");
             BeanUtils.copyProperties(this, orderApproved);
             orderApproved.publishAfterCommit();
+        }else if("Canceled".equals(this.getStatus())) {
+            System.out.println("##### status is not Ordered #####");
+
+            OrderCanceled orderCanceled = new OrderCanceled();
+
+            orderCanceled.setOrderId(this.getOrderId());
+            orderCanceled.setDriverId(this.getDriverId());
+            orderCanceled.setLocation(this.getLocation());
+            orderCanceled.setCustomerName(this.getCustomerName());
+
+            BeanUtils.copyProperties(this, orderCanceled);
+            orderCanceled.publishAfterCommit();
         }
 
     }
@@ -72,16 +71,12 @@ public class Order {
     public Long getOrderId() {
         return orderId;
     }
-    public void setOrderId(Long orderId) {
-        this.orderId = orderId;
-    }
+    public void setOrderId(Long orderId) { this.orderId = orderId; }
 
     public Long getDriverId() {
         return driverId;
     }
-    public void setDriverId(Long driverId) {
-        this.driverId = driverId;
-    }
+    public void setDriverId(Long driverId) { this.driverId = driverId;}
 
     public String getCustomerName() {
         return customerName;
