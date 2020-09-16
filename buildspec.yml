@@ -3,8 +3,8 @@ version: 0.2
 
 env:
   variables:
-    IMAGE_REPO_NAME: "a-order"
-    _PROJECT_NAME: "a-order"
+    IMAGE_REPO_NAME: "dh-order"
+    _PROJECT_NAME: "dh-order"
 
 phases:
   install:
